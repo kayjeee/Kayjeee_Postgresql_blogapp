@@ -18,10 +18,6 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.timestamps
     end
 
-    # Add indexes to foreign key columns for better performance
-    add_index :users, :author_id
-
-    # Additional indexes can be added for other foreign key columns if needed
-    # add_index :users, :another_foreign_key_column
+    # No need to add an index on a non-existing column
   end
 end
