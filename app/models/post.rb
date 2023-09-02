@@ -6,6 +6,10 @@ class Post < ApplicationRecord
   has_many :comments
   has_many :likes
 
+  # Validations for the Post model
+  validates :title, presence: true
+  validates :text, presence: true
+
   # After saving a post, this callback method updates the author's posts counter.
   after_save :update_author_posts_counter
 
